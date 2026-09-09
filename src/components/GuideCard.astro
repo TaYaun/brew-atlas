@@ -2,8 +2,10 @@
 const { guide } = Astro.props;
 ---
 <article class="story-card">
-  <div class="eyebrow">{guide.category} · {guide.readTime}</div>
-  <h3><a href={`/guides/${guide.slug}`}>{guide.title}</a></h3>
-  <p>{guide.description}</p>
-  <a class="text-link" href={`/guides/${guide.slug}`}>อ่านคู่มือ <span aria-hidden="true">→</span></a>
+  <a class="guide-media" href={`/guides/${guide.slug}`} tabindex="-1"><img src={guide.image} alt="" width="768" height="512" loading="lazy"/></a>
+  <div class="guide-copy"><div class="eyebrow">{guide.category} · {guide.readTime}</div>
+    <h3><a href={`/guides/${guide.slug}`}>{guide.title}</a></h3>
+    <p>{guide.description}</p>
+    <a class="text-link" href={`/guides/${guide.slug}`}>อ่านคู่มือ <span aria-hidden="true">→</span></a>
+  </div>
 </article>
