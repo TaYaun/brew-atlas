@@ -2,12 +2,5 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "brew-atlas-th",
   "compatibility_date": "2026-09-01",
-  "pages_build_output_dir": "dist",
-  "d1_databases": [
-    {
-      "binding": "DB",
-      "database_name": "brew-atlas-th",
-      "database_id": "REPLACE_AFTER_D1_CREATE"
-    }
-  ]
+  "pages_build_output_dir": "dist"
 }
