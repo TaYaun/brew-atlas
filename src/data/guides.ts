@@ -1,7 +1,7 @@
 export type Guide = { slug:string; title:string; description:string; readTime:string; category:string };
 export const guides: Guide[] = [
-  {slug:'how-to-choose-coffee',title:'How to choose coffee beans without overthinking it',description:'Match roast, flavor and brew method to the cup you actually enjoy.',readTime:'6 min',category:'Start here'},
-  {slug:'light-vs-medium-vs-dark-roast',title:'Light vs medium vs dark roast',description:'What roast level changes—and what it does not tell you.',readTime:'7 min',category:'Coffee basics'},
-  {slug:'coffee-for-espresso-and-milk',title:'Choosing coffee for espresso and milk drinks',description:'Find enough body and intensity for balanced lattes and iced coffee.',readTime:'5 min',category:'Espresso'},
-  {slug:'pour-over-ratio-guide',title:'A practical pour-over ratio guide',description:'A repeatable starting recipe with simple adjustments for taste.',readTime:'6 min',category:'Brewing'}
+  {slug:'how-to-choose-coffee',title:'เลือกเมล็ดกาแฟอย่างไร โดยไม่ต้องคิดให้ซับซ้อน',description:'จับคู่ระดับคั่ว รสชาติ และวิธีชงกับกาแฟแก้วที่คุณชอบจริง ๆ',readTime:'อ่าน 6 นาที',category:'เริ่มต้นที่นี่'},
+  {slug:'light-vs-medium-vs-dark-roast',title:'คั่วอ่อน คั่วกลาง และคั่วเข้มต่างกันอย่างไร',description:'เข้าใจสิ่งที่ระดับคั่วบอกเรา และสิ่งที่ไม่ควรตัดสินจากระดับคั่วเพียงอย่างเดียว',readTime:'อ่าน 7 นาที',category:'พื้นฐานกาแฟ'},
+  {slug:'coffee-for-espresso-and-milk',title:'เลือกกาแฟสำหรับ Espresso และเมนูนม',description:'ค้นหาบอดี้และความเข้มที่สมดุลสำหรับ Latte และกาแฟเย็น',readTime:'อ่าน 5 นาที',category:'Espresso'},
+  {slug:'pour-over-ratio-guide',title:'คู่มืออัตราส่วน Pour Over ที่ใช้ได้จริง',description:'สูตรตั้งต้นที่ทำซ้ำได้ พร้อมวิธีปรับรสชาติอย่างง่าย',readTime:'อ่าน 6 นาที',category:'การชงกาแฟ'}
 ];
