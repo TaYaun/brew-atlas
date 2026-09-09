@@ -1,4 +1,4 @@
-# Brew Atlas administration
+# Brew Atlas TH administration
 
 The production site is static-first and Git-managed. This keeps hosting cost and attack surface low.
 

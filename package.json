@@ -1,5 +1,5 @@
 {
-  "name": "brew-atlas",
+  "name": "brew-atlas-th",
   "version": "1.0.0",
   "private": true,
   "type": "module",
@@ -8,7 +8,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "check": "astro check",
-    "cf:dev": "wrangler pages dev dist --d1 DB=brew-atlas-local",
+    "cf:dev": "wrangler pages dev dist --d1 DB=brew-atlas-th-local",
     "cf:deploy": "npm run build && wrangler pages deploy dist"
   },
   "dependencies": {

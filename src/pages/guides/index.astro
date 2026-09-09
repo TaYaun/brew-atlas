@@ -3,4 +3,4 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import GuideCard from '../../components/GuideCard.astro';
 import { guides } from '../../data/guides';
 ---
-<BaseLayout title="Coffee Brewing Guides | Brew Atlas" description="Practical coffee guides for pour-over, espresso and milk drinks."><section class="section"><div class="wrap"><div class="eyebrow">Brew Guides</div><h1 class="page-title">Make better coffee at home</h1><p class="lede">Useful starting points, explained clearly and designed for repeatable results.</p><div class="story-grid">{guides.map(guide => <GuideCard guide={guide} />)}</div></div></section></BaseLayout>
+<BaseLayout title="Coffee Brewing Guides | Brew Atlas TH" description="Practical coffee guides for pour-over, espresso and milk drinks."><section class="section"><div class="wrap"><div class="eyebrow">Brew Guides</div><h1 class="page-title">Make better coffee at home</h1><p class="lede">Useful starting points, explained clearly and designed for repeatable results.</p><div class="story-grid">{guides.map(guide => <GuideCard guide={guide} />)}</div></div></section></BaseLayout>

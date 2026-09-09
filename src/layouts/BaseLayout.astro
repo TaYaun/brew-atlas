@@ -1,5 +1,5 @@
 ---
-const { title = 'Brew Atlas', description = 'Explore Coffee. Find Your Cup.', image = '/og-default.svg', type = 'website', schema } = Astro.props;
+const { title = 'Brew Atlas TH', description = 'Explore Coffee. Find Your Cup.', image = '/og-default.svg', type = 'website', schema } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site);
 const analyticsToken = import.meta.env.PUBLIC_CF_ANALYTICS_TOKEN;
 ---
@@ -29,9 +29,9 @@ const analyticsToken = import.meta.env.PUBLIC_CF_ANALYTICS_TOKEN;
   </head>
   <body>
     <a class="skip" href="#content">Skip to content</a>
-    <header class="wrap nav"><a class="brand" href="/">BREW ATLAS<small>EXPLORE COFFEE. FIND YOUR CUP.</small></a><button class="mobile-toggle" aria-label="Open menu" aria-expanded="false">☰</button><nav class="menu" aria-label="Main navigation"><a href="/reviews">Reviews</a><a href="/guides">Brew Guides</a><a href="/products">Coffee Picks</a><a href="/about">About</a></nav></header>
+    <header class="wrap nav"><a class="brand" href="/">BREW ATLAS TH<small>EXPLORE COFFEE. FIND YOUR CUP.</small></a><button class="mobile-toggle" aria-label="Open menu" aria-expanded="false">☰</button><nav class="menu" aria-label="Main navigation"><a href="/reviews">Reviews</a><a href="/guides">Brew Guides</a><a href="/products">Coffee Picks</a><a href="/about">About</a></nav></header>
     <main id="content"><slot /></main>
-    <footer class="footer"><div class="wrap footer-grid"><div><strong>BREW ATLAS</strong><p>Independent coffee discovery and confident recommendations.</p></div><div><strong>Explore</strong><p><a href="/products">Coffee Picks</a><br/><a href="/reviews">Reviews</a><br/><a href="/guides">Brew Guides</a></p></div><div><strong>Editorial</strong><p><a href="/about">About & disclosure</a><br/><a href="/privacy">Privacy</a></p></div></div></footer>
+    <footer class="footer"><div class="wrap footer-grid"><div><strong>BREW ATLAS TH</strong><p>Independent coffee discovery and confident recommendations for Thailand.</p></div><div><strong>Explore</strong><p><a href="/products">Coffee Picks</a><br/><a href="/reviews">Reviews</a><br/><a href="/guides">Brew Guides</a></p></div><div><strong>Editorial</strong><p><a href="/about">About & disclosure</a><br/><a href="/privacy">Privacy</a></p></div></div></footer>
     <script is:inline>document.querySelector('.mobile-toggle')?.addEventListener('click',e=>{const b=e.currentTarget,n=document.querySelector('.menu');n?.classList.toggle('open');b.setAttribute('aria-expanded',String(n?.classList.contains('open')))})</script>
   </body>
 </html>
