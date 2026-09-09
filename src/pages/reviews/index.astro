@@ -1,0 +1,6 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import { activeProducts } from '../../data/products';
+---
+<BaseLayout title="Independent Coffee Reviews | Brew Atlas" description="Context-rich coffee reviews focused on roast, flavor, brew method and who each coffee suits."><section class="section"><div class="wrap"><div class="eyebrow">Independent reviews</div><h1 class="page-title">Reviews with context</h1><p class="lede">Each review explains the flavor direction, best brew fit and trade-offs—so a score never stands alone.</p><div class="grid">{activeProducts.map(product => <ProductCard product={product} />)}</div></div></section></BaseLayout>

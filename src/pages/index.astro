@@ -1,0 +1,12 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProductCard from '../components/ProductCard.astro';
+import GuideCard from '../components/GuideCard.astro';
+import { activeProducts } from '../data/products';
+import { guides } from '../data/guides';
+---
+<BaseLayout title="Brew Atlas — Explore Coffee. Find Your Cup." description="Independent coffee guides, honest reviews and carefully selected beans for better everyday brewing." image="/brand/brew-atlas-hero.webp">
+  <section class="hero visual"><div class="wrap"><div class="eyebrow">Coffee · People · Places · Stories</div><h1>Explore coffee.<br/>Find your cup.</h1><p>Clear guides and thoughtful recommendations that connect flavor, origin and brewing to the coffee you will actually enjoy.</p><div class="actions"><a class="btn" href="/products">Explore coffee picks</a><a class="btn secondary" href="/guides">Learn to brew</a></div></div></section>
+  <section class="section"><div class="wrap"><div class="section-head"><div><div class="eyebrow">Launch selection</div><h2>Coffee worth exploring</h2></div><a class="text-link" href="/products">View all 8 picks →</a></div><div class="grid">{activeProducts.slice(0,4).map(product => <ProductCard product={product} />)}</div></div></section>
+  <section class="section alt"><div class="wrap"><div class="section-head"><div><div class="eyebrow">Practical knowledge</div><h2>Make every bag brew better</h2></div><a class="text-link" href="/guides">All guides →</a></div><div class="story-grid">{guides.slice(0,3).map(guide => <GuideCard guide={guide} />)}</div></div></section>
+</BaseLayout>
