@@ -1,5 +1,9 @@
 import { products } from '../../src/data/products';
-const LINKS = Object.fromEntries(products.filter(p => p.status === 'active').map(p => [p.slug, p.affiliateUrl]));
+import { equipmentStore } from '../../src/data/equipment';
+const LINKS = Object.fromEntries([
+  ...products.filter(p => p.status === 'active').map(p => [p.slug, p.affiliateUrl]),
+  [equipmentStore.slug, equipmentStore.affiliateUrl],
+]);
 interface Env { DB?: D1Database }
 export const onRequestGet: PagesFunction<Env> = async ({ params, request, env }) => {
   const slug = String(params.slug || '');

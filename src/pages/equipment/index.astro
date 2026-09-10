@@ -1,0 +1,93 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { equipmentCategories, equipmentStore } from '../../data/equipment';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: 'อุปกรณ์สำหรับชงกาแฟ | Brew Atlas TH',
+  description: 'รวมอุปกรณ์ชงกาแฟที่คัดสรรสำหรับคนรักกาแฟ พร้อมลิงก์ไปยังหน้าร้าน Shopee Affiliate',
+  url: new URL('/equipment', Astro.site).href,
+};
+---
+
+<BaseLayout
+  title="อุปกรณ์สำหรับชงกาแฟ | Brew Atlas TH"
+  description="เลือกดูเครื่องชง เครื่องบด อุปกรณ์ดริป และอุปกรณ์เสริมบาริสต้าจากหน้าร้าน Shopee ที่ Brew Atlas TH คัดสรร"
+  image={equipmentStore.image}
+  schema={schema}
+>
+  <section class="equipment-hero">
+    <div class="wrap hero-wrap">
+      <a class="hero-link" href={`/go/${equipmentStore.slug}?utm_campaign=equipment-hero`} rel="sponsored nofollow" aria-label="เปิดหน้าร้านอุปกรณ์ชงกาแฟบน Shopee">
+        <img
+          src={equipmentStore.image}
+          alt="อุปกรณ์สำหรับชงกาแฟที่ Brew Atlas TH คัดสรร — กดเพื่อเปิดหน้าร้าน Shopee"
+          width="1536"
+          height="864"
+          fetchpriority="high"
+        />
+        <span>กดที่ภาพเพื่อเลือกดูสินค้าบน Shopee <span aria-hidden="true">↗</span></span>
+      </a>
+    </div>
+  </section>
+
+  <section class="section equipment-intro">
+    <div class="wrap intro-grid">
+      <div>
+        <div class="eyebrow">Coffee Brewing Equipment</div>
+        <h1 class="page-title">อุปกรณ์ที่ดี<br/>ทำให้ทุกแก้วง่ายขึ้น</h1>
+      </div>
+      <div class="intro-copy">
+        <p class="lede">รวมเครื่องชง เครื่องบด และอุปกรณ์ที่ช่วยให้คุณควบคุมรสชาติได้แม่นยำขึ้น เลือกดูสินค้า ราคา ตัวเลือก และสต็อกล่าสุดได้โดยตรงบน Shopee</p>
+        <div class="actions">
+          <a class="btn store-cta" href={`/go/${equipmentStore.slug}?utm_campaign=equipment-store`} rel="sponsored nofollow">เปิดหน้าร้านอุปกรณ์บน Shopee <span aria-hidden="true">↗</span></a>
+        </div>
+        <p class="notice">ลิงก์นี้เป็น Affiliate Link หากสั่งซื้อผ่านลิงก์ Brew Atlas TH อาจได้รับค่าคอมมิชชัน โดยราคาไม่เพิ่มขึ้นสำหรับคุณ</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt" aria-labelledby="equipment-categories">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">เลือกตามวิธีชง</div>
+          <h2 id="equipment-categories">หมวดอุปกรณ์ที่ควรรู้จัก</h2>
+          <p class="section-intro">เริ่มจากวิธีชงที่ใช้จริง แล้วค่อยเลือกอุปกรณ์ที่ตอบโจทย์ ไม่จำเป็นต้องซื้อทุกชิ้นพร้อมกัน</p>
+        </div>
+      </div>
+      <div class="equipment-grid">
+        {equipmentCategories.map((category, index) => (
+          <article class="equipment-category">
+            <span class="category-number">0{index + 1}</span>
+            <span class="category-icon" aria-hidden="true">{category.icon}</span>
+            <h3>{category.name}</h3>
+            <p>{category.description}</p>
+            <a href={`/go/${equipmentStore.slug}?utm_campaign=equipment-${index + 1}`} rel="sponsored nofollow">เลือกดูบน Shopee <span aria-hidden="true">→</span></a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section buying-guide">
+    <div class="wrap guide-panel">
+      <div>
+        <div class="eyebrow">เลือกอย่างมีเหตุผล</div>
+        <h2>ก่อนซื้อ ลองตอบ 3 คำถาม</h2>
+      </div>
+      <ol>
+        <li><strong>ชงแบบไหนบ่อยที่สุด?</strong><span>ดริป, Espresso, French Press หรือกาแฟนม</span></li>
+        <li><strong>ต้องการความสะดวกแค่ไหน?</strong><span>ชงด้วยมือ ควบคุมเอง หรือกดปุ่มแล้วพร้อมดื่ม</span></li>
+        <li><strong>งบรวมอุปกรณ์เท่าไร?</strong><span>เผื่องบสำหรับเครื่องบด เครื่องชั่ง และการดูแลรักษาด้วย</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <style>
+    .equipment-hero{background:#20150e;padding:24px 0 0}.hero-wrap{width:min(1380px,100%)}.hero-link{position:relative;display:block;overflow:hidden}.hero-link img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;transition:transform .35s,filter .35s}.hero-link:hover img{transform:scale(1.01);filter:brightness(.92)}.hero-link>span{position:absolute;right:18px;bottom:18px;background:rgba(36,23,15,.9);color:#fff;padding:10px 14px;font-size:.78rem;font-weight:700;letter-spacing:.02em}.intro-grid{display:grid;grid-template-columns:1fr .85fr;gap:70px;align-items:center}.intro-copy{padding-top:18px}.store-cta{gap:10px}.equipment-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}.equipment-category{position:relative;background:var(--paper);border:1px solid var(--line);padding:28px 24px;min-height:285px;display:flex;flex-direction:column}.category-number{position:absolute;right:18px;top:17px;color:var(--latte);font:700 1.05rem var(--serif)}.category-icon{width:50px;height:50px;border-radius:50%;display:grid;place-items:center;background:var(--espresso);color:var(--cream);font-size:1.25rem;margin-bottom:26px}.equipment-category h3{font:700 1.28rem/1.25 var(--serif);margin:0 0 10px}.equipment-category p{color:var(--muted);font-size:.88rem}.equipment-category a{color:var(--coffee);font-weight:700;font-size:.83rem;margin-top:auto}.guide-panel{display:grid;grid-template-columns:.8fr 1.2fr;gap:65px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding-top:48px;padding-bottom:48px}.guide-panel ol{list-style:none;padding:0;margin:0;counter-reset:item}.guide-panel li{counter-increment:item;display:grid;grid-template-columns:1fr 1.25fr;gap:18px;padding:16px 0;border-bottom:1px solid var(--line)}.guide-panel li:first-child{padding-top:0}.guide-panel li:last-child{border:0}.guide-panel li strong::before{content:counter(item) '. ';color:var(--coffee)}.guide-panel li span{color:var(--muted)}
+    @media(max-width:900px){.intro-grid,.guide-panel{grid-template-columns:1fr;gap:24px}.equipment-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:600px){.equipment-hero{padding-top:10px}.hero-wrap{width:100%}.hero-link img{aspect-ratio:16/9}.hero-link>span{right:8px;bottom:8px;padding:7px 9px;font-size:.64rem}.equipment-intro .page-title{font-size:clamp(2.45rem,12vw,3.7rem)}.equipment-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.equipment-category{padding:18px 13px;min-height:255px}.category-icon{width:40px;height:40px;margin-bottom:18px}.category-number{right:11px;top:10px}.equipment-category h3{font-size:1rem}.equipment-category p{font-size:.76rem}.equipment-category a{font-size:.74rem}.guide-panel li{grid-template-columns:1fr;gap:3px}.store-cta{width:100%;text-align:center}}
+  </style>
+</BaseLayout>
