@@ -1,0 +1,152 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'รีวิวกาแฟลาว โบลาเวน: รสชาติ แหล่งปลูก และวิธีชง | Brew Atlas TH';
+const description = 'รู้จักกาแฟลาวจากที่ราบสูงโบลาเวน โปรไฟล์ถั่ว ช็อกโกแลต คาราเมล บอดี้แน่น พร้อมวิธีชงและข้อควรรู้ก่อนเลือกซื้อ';
+const image = '/reviews/laos-bolaven-cover.webp';
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'รีวิวกาแฟลาว โบลาเวน: ความหวานแบบถั่วและช็อกโกแลตจากที่ราบสูงภูเขาไฟ',
+  description,
+  image: new URL(image, Astro.site).href,
+  mainEntityOfPage: canonical,
+  inLanguage: 'th-TH',
+  datePublished: '2026-09-10',
+  dateModified: '2026-09-10',
+  author: { '@type': 'Organization', name: 'BREW ATLAS TH', url: new URL('/', Astro.site).href },
+  publisher: { '@type': 'Organization', name: 'BREW ATLAS TH', url: new URL('/', Astro.site).href },
+  about: [
+    { '@type': 'Thing', name: 'กาแฟลาวโบลาเวน' },
+    { '@type': 'Place', name: 'Bolaven Plateau, Laos' }
+  ]
+};
+---
+
+<BaseLayout title={title} description={description} image={image} type="article" schema={schema}>
+  <main class="section">
+    <article class="wrap prose">
+      <div class="eyebrow">รีวิวแหล่งปลูก · ประเทศลาว</div>
+      <h1>รีวิวกาแฟลาว โบลาเวน: ความหวานแบบถั่วและช็อกโกแลตจากที่ราบสูงภูเขาไฟ</h1>
+      <p class="lede">กาแฟที่ให้ความรู้สึกสงบ หนักแน่น และดื่มง่าย ด้วยความหวานแบบน้ำตาลทรายแดง ถั่ว คาราเมล และช็อกโกแลตที่ค่อย ๆ ชัดขึ้นเมื่ออุณหภูมิลดลง</p>
+      <div class="article-meta">โดย BREW ATLAS TH · อัปเดต 10 กันยายน 2569 · อ่านประมาณ 8 นาที</div>
+      <img class="article-hero" src={image} alt="รีวิวกาแฟลาวโบลาเวน พร้อมสรุปโทนถั่ว ช็อกโกแลต คาราเมล บอดี้ และแหล่งปลูก" width="1536" height="864" fetchpriority="high" />
+
+      <section class="verdict" aria-labelledby="quick-verdict">
+        <div>
+          <div class="eyebrow">สรุปสั้น ๆ</div>
+          <h2 id="quick-verdict">ดื่มง่าย บอดี้ดี และเข้ากับนม</h2>
+          <p>Laos Bolaven เหมาะกับคนที่ชอบกาแฟหวานนุ่ม ความเปรี้ยวไม่จัด และต้องการเมล็ดที่ใช้ได้ทั้งกาแฟดำ เอสเพรสโซ และเมนูนม</p>
+        </div>
+        <div class="score"><strong>8/10</strong><span>คะแนนเชิงบรรณาธิการ<br/>สำหรับโปรไฟล์ภาพรวม</span></div>
+      </section>
+
+      <div class="notice"><strong>ขอบเขตของรีวิว:</strong> “โบลาเวน” ครอบคลุมหลายสายพันธุ์ ระดับความสูง วิธีแปรรูป และระดับคั่ว บทความนี้จึงอธิบายภาพรวมของแหล่งปลูก ไม่ใช่ผลชิมจากกาแฟถุงใดถุงหนึ่ง</div>
+
+      <nav class="toc" aria-label="สารบัญบทความ">
+        <strong>อ่านตามหัวข้อ</strong>
+        <ol>
+          <li><a href="#origin">โบลาเวนอยู่ที่ไหน</a></li>
+          <li><a href="#flavor">โปรไฟล์รสชาติ</a></li>
+          <li><a href="#cup">ประสบการณ์ในถ้วย</a></li>
+          <li><a href="#brewing">ระดับคั่วและวิธีชง</a></li>
+          <li><a href="#buying">สิ่งที่ควรดูก่อนซื้อ</a></li>
+        </ol>
+      </nav>
+
+      <h2 id="origin">ที่ราบสูงโบลาเวน: หัวใจของกาแฟลาวตอนใต้</h2>
+      <p>ที่ราบสูงโบลาเวน (Bolaven Plateau) อยู่ทางตอนใต้ของลาว โดยพื้นที่ผลิตสำคัญเชื่อมโยงกับแขวงจำปาสักและเมืองปากซอง แหล่งข้อมูลด้านกาแฟระบุช่วงความสูงของพื้นที่ปลูกสำคัญประมาณ <strong>800–1,350 เมตรเหนือระดับน้ำทะเล</strong> ขณะที่หลายพื้นที่บนที่ราบสูงอยู่ราว 1,000–1,350 เมตร</p>
+      <p>อากาศที่เย็นกว่าพื้นราบ ความชื้น และดินที่สัมพันธ์กับภูมิประเทศภูเขาไฟเดิม ช่วยสร้างสภาพแวดล้อมที่เหมาะกับกาแฟ โดยเฉพาะอาราบิกาในพื้นที่สูง กาแฟเริ่มเข้ามาในลาวช่วงยุคอาณานิคมฝรั่งเศส ก่อนที่ภาคใต้จะพัฒนาเป็นศูนย์กลางการผลิตสำคัญ</p>
+      <p>อย่างไรก็ตาม คำว่า “กาแฟลาว” ไม่ได้หมายถึงอาราบิกาเสมอไป เพราะประเทศลาวปลูกทั้งอาราบิกา โรบัสตา และกาแฟกลุ่มอื่น รสชาติในถ้วยจึงขึ้นอยู่กับวัตถุดิบและการจัดการหลังเก็บเกี่ยวพอ ๆ กับชื่อแหล่งปลูก</p>
+
+      <h2 id="flavor">โปรไฟล์รสชาติที่มักพบ</h2>
+      <p>เสน่ห์ของโบลาเวนอยู่ที่ <strong>ความสมดุลและความหวานที่มีโครงสร้าง</strong> มากกว่าความเปรี้ยวฉูดฉาด ล็อตคั่วกลางมักขับโทนถั่ว น้ำตาล คาราเมล และโกโก้ ส่วนคั่วอ่อนจากวัตถุดิบที่เหมาะสมอาจเผยกลิ่นดอกไม้ ซิตรัส ผลไม้ หรือเครื่องเทศอ่อน ๆ เพิ่มขึ้น</p>
+
+      <div class="table-scroll" tabindex="0" role="region" aria-label="ตารางโปรไฟล์รสชาติกาแฟโบลาเวน">
+        <table>
+          <thead><tr><th>องค์ประกอบ</th><th>ลักษณะที่มักพบ</th><th>ความรู้สึกขณะดื่ม</th></tr></thead>
+          <tbody>
+            <tr><td>กลิ่นหอม</td><td>ถั่วคั่ว คาราเมล ช็อกโกแลต เครื่องเทศอ่อน</td><td>อบอุ่นและคุ้นเคย</td></tr>
+            <tr><td>ความหวาน</td><td>น้ำตาลทรายแดง น้ำตาลดิบ โกโก้</td><td>นุ่มและต่อเนื่อง</td></tr>
+            <tr><td>ความเป็นกรด</td><td>ต่ำถึงปานกลาง; บางล็อตคล้ายซิตรัส</td><td>สดชื่นโดยไม่แหลม</td></tr>
+            <tr><td>บอดี้</td><td>กลางถึงค่อนข้างหนัก</td><td>เต็มปากและรองรับนมได้ดี</td></tr>
+            <tr><td>ฟินิช</td><td>โกโก้ ถั่ว หรือยาสูบอ่อนในบางล็อต</td><td>ทิ้งความเข้มและความอบอุ่น</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>Sweet Maria’s เคยประเมินล็อตจากปากซองว่ามีน้ำตาลดิบ วอลนัต ความเป็นกรดคล้ายชา และโกโก้นิบเมื่อเย็นลง ตัวอย่างนี้ช่วยอธิบายบุคลิกที่พบได้ แต่ไม่ควรถูกใช้แทนคำอธิบายของกาแฟทุกล็อตจากลาว</p>
+
+      <h2 id="cup">ดื่มแล้วเป็นอย่างไร</h2>
+      <p>เมื่อชงเป็นกาแฟดำ กลิ่นแรกมักเริ่มจากถั่วคั่วและคาราเมล ตามด้วยความหวานคล้ายน้ำตาลทรายแดง บอดี้ระดับกลางถึงเต็มทำให้กาแฟมีน้ำหนักโดยไม่จำเป็นต้องขมหนัก</p>
+      <p>เมื่อถ้วยเย็นลง ความหวานมักแยกชั้นได้ง่ายขึ้น ล็อตที่มีความเป็นกรดอาจเผยส้ม เปลือกส้ม หรือผลไม้แห้ง ขณะที่ล็อตโทนถั่วจะชวนให้นึกถึงวอลนัต อัลมอนด์ และโกโก้ เป็นกาแฟที่เหมาะกับการจิบช้า ๆ และกลับมาชิมซ้ำหลายอุณหภูมิ</p>
+
+      <aside class="product-pick" aria-label="กาแฟลาวโบลาเวนที่แนะนำ">
+        <div>
+          <div class="eyebrow">กาแฟที่เกี่ยวข้อง</div>
+          <h3>Laos Bolaven Premium AA</h3>
+          <p>อาราบิกา 100% จากโบลาเวน โทน Milk Chocolate ถั่ว และ Brown Sugar มีระดับคั่วให้เลือกสำหรับ Filter, Espresso และเมนูนม</p>
+        </div>
+        <a class="btn" href="/products/roast-lab-bkk-laos-bolaven">ดูรายละเอียดและราคา</a>
+        <small>ลิงก์หน้าสินค้าเป็น Affiliate Link หากสั่งซื้อ BREW ATLAS TH อาจได้รับค่าคอมมิชชันโดยไม่มีค่าใช้จ่ายเพิ่มสำหรับคุณ</small>
+      </aside>
+
+      <h2 id="brewing">เลือกระดับคั่วและวิธีชง</h2>
+      <p><strong>คั่วอ่อนถึงคั่วกลาง</strong> เหมาะกับการสำรวจรายละเอียดของแหล่งปลูก เพราะยังรักษาความใส ซิตรัส และกลิ่นหอมไว้ได้มากกว่า ลองชง Drip หรือ French Press แล้วชิมซ้ำเมื่อกาแฟเย็นลง</p>
+      <p><strong>คั่วกลางถึงคั่วเข้ม</strong> จะดันช็อกโกแลต คาราเมล ถั่ว และบอดี้ให้เด่นขึ้น เหมาะกับ Espresso, Americano และกาแฟนม อีกทั้งยังใช้เป็นส่วนประกอบของ Blend ได้ดีเพราะมีรสสัมผัสสมดุล</p>
+
+      <div class="table-scroll" tabindex="0" role="region" aria-label="ตารางวิธีชงกาแฟโบลาเวน">
+        <table>
+          <thead><tr><th>วิธีชง</th><th>ผลลัพธ์ที่คาดหวัง</th><th>เหมาะกับใคร</th></tr></thead>
+          <tbody>
+            <tr><td>Drip</td><td>กลิ่นชัด ความหวานแยกชั้น เห็นความต่างของแต่ละล็อต</td><td>คนที่ชอบชิมรายละเอียด</td></tr>
+            <tr><td>French Press</td><td>บอดี้เต็ม ถั่วและโกโก้เด่น</td><td>คนที่ชอบเนื้อสัมผัสแน่น</td></tr>
+            <tr><td>Espresso</td><td>ความหวานและช็อกโกแลตเข้มขึ้น</td><td>ช็อตสั้นและ Americano</td></tr>
+            <tr><td>Latte / Cappuccino</td><td>บอดี้และความหวานรองรับนมได้ดี</td><td>คนที่ชอบกาแฟนมนุ่ม</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 id="buying">ก่อนซื้อ ควรดูมากกว่าคำว่า “Bolaven”</h2>
+      <p>ชื่อแหล่งปลูกอย่างเดียวบอกประสบการณ์ในถ้วยได้ไม่ครบ ให้ตรวจข้อมูลต่อไปนี้ร่วมกัน:</p>
+      <ul class="checklist">
+        <li><strong>ชนิดและสายพันธุ์:</strong> Arabica หรือ Robusta และระบุสายพันธุ์ย่อยหรือไม่</li>
+        <li><strong>แหล่งและความสูง:</strong> เมือง สวน หรือระดับความสูงช่วยให้เข้าใจล็อตมากขึ้น</li>
+        <li><strong>Process:</strong> Washed, Natural หรือกระบวนการอื่น</li>
+        <li><strong>ระดับและวันที่คั่ว:</strong> มีผลโดยตรงต่อบอดี้ ความขม กลิ่น และความสด</li>
+        <li><strong>คำแนะนำการชง:</strong> เลือกให้ตรงกับอุปกรณ์และรสที่ชอบ</li>
+      </ul>
+
+      <h2>บทสรุป</h2>
+      <p>กาแฟลาวโบลาเวนเหมาะสำหรับผู้ดื่มที่อยากออกจากแหล่งปลูกยอดนิยม แต่ยังต้องการความสมดุลและดื่มง่าย ภาพรวมเด่นที่ <strong>บอดี้กลางถึงค่อนข้างหนัก ความหวานแบบน้ำตาลและคาราเมล รวมถึงโทนถั่วและช็อกโกแลต</strong> ส่วนล็อตคั่วอ่อนหรือการแปรรูปเฉพาะอาจเติมดอกไม้ ซิตรัส และผลไม้ให้ซับซ้อนขึ้น</p>
+      <p><strong>เหมาะสำหรับ:</strong> กาแฟประจำวัน Espresso กาแฟนม และผู้ที่ชอบกาแฟหวานนุ่มมีบอดี้ หากอยากสำรวจความแตกต่างระหว่างล็อต ควรเริ่มจาก Drip และชิมเมื่อถ้วยเย็นลง</p>
+
+      <div class="actions">
+        <a class="btn" href="/products/roast-lab-bkk-laos-bolaven">ดูกาแฟ Laos Bolaven แนะนำ</a>
+        <a class="btn secondary" href="/reviews">กลับไปหน้ารีวิวทั้งหมด</a>
+      </div>
+
+      <section class="references" aria-labelledby="references-heading">
+        <h2 id="references-heading">แหล่งข้อมูล</h2>
+        <ol>
+          <li><a href="https://library.sweetmarias.com/coffee-producing-countries/indonesia-se-asia/laos-coffee-overview/" rel="noopener noreferrer">Sweet Maria’s Coffee Library — Laos Coffee Overview</a></li>
+          <li><a href="https://www.daocoffeethailand.com/post/lao-coffee-and-bolaven-plateau" rel="noopener noreferrer">DAO Coffee Thailand — ที่ราบสูงโบลาเวนและกาแฟพิเศษจากเอเชีย</a></li>
+        </ol>
+        <p><small>เจ้าของบทความ: BREW ATLAS TH · รสชาติจริงขึ้นอยู่กับสายพันธุ์ วิธีแปรรูป ระดับการคั่ว ความสด คุณภาพน้ำ และวิธีชง</small></p>
+      </section>
+    </article>
+  </main>
+
+  <style>
+    .verdict{display:grid;grid-template-columns:1fr auto;gap:30px;align-items:center;background:var(--espresso);color:var(--cream);padding:26px 30px;margin:0 0 24px}
+    .verdict h2{font-size:1.9rem;margin:.25em 0}.verdict p{margin:0;color:#d8c9b7}.verdict .eyebrow{color:var(--latte)}
+    .score{border-left:1px solid rgba(255,255,255,.2);padding-left:26px;text-align:center}.score strong{display:block;font:700 2.8rem/1 var(--serif);color:#f1d3a0}.score span{font-size:.7rem;color:#cdbda9}
+    .notice{margin-bottom:26px}.prose h3{font:700 1.45rem/1.25 var(--serif)}
+    .table-scroll{overflow-x:auto;margin:24px 0;border:1px solid var(--line)}.table-scroll table{min-width:680px;margin:0;border:0}
+    .product-pick{display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center;background:linear-gradient(135deg,#f8f4ec,#ead9bf);border-left:4px solid var(--coffee);padding:28px;margin:38px 0}.product-pick h3{margin:.3em 0}.product-pick p{margin:0}.product-pick small{grid-column:1/-1;color:var(--muted)}
+    .checklist{padding-left:1.25rem}.checklist li{margin:.7em 0}.references{border-top:1px solid var(--line);margin-top:56px;padding-top:12px}.references h2{font-size:1.8rem}.references a{color:var(--coffee);text-decoration:underline;text-underline-offset:3px}
+    @media(max-width:600px){.prose h1{font-size:2.3rem}.article-hero{margin-top:22px}.verdict{grid-template-columns:1fr;padding:22px}.score{border-left:0;border-top:1px solid rgba(255,255,255,.2);padding:18px 0 0;text-align:left}.product-pick{grid-template-columns:1fr;padding:22px}.product-pick .btn{width:100%}.table-scroll{margin-inline:-4vw;border-left:0;border-right:0}.table-scroll table{min-width:650px;font-size:.78rem}.actions .btn{width:100%}}
+  </style>
+</BaseLayout>

@@ -3,4 +3,43 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import ProductCard from '../../components/ProductCard.astro';
 import { activeProducts } from '../../data/products';
 ---
-<BaseLayout title="รีวิวกาแฟพร้อมบริบท | Brew Atlas TH" description="รีวิวกาแฟที่อธิบายระดับคั่ว รสชาติ วิธีชง และผู้ดื่มที่เหมาะสม"><section class="section"><div class="wrap"><div class="eyebrow">รีวิวอย่างอิสระ</div><h1 class="page-title">รีวิวที่ช่วยให้เลือกได้จริง</h1><p class="lede">ทุกรีวิวอธิบายทิศทางรสชาติ วิธีชงที่เหมาะ และข้อควรพิจารณา เพราะคะแนนเพียงอย่างเดียวไม่สามารถเล่าเรื่องกาแฟได้ครบ</p><div class="grid">{activeProducts.map(product => <ProductCard product={product} />)}</div></div></section></BaseLayout>
+<BaseLayout title="รีวิวกาแฟพร้อมบริบท | Brew Atlas TH" description="รีวิวกาแฟที่อธิบายแหล่งปลูก ระดับคั่ว รสชาติ วิธีชง และผู้ดื่มที่เหมาะสม">
+  <section class="section">
+    <div class="wrap">
+      <div class="eyebrow">รีวิวอย่างอิสระ</div>
+      <h1 class="page-title">รีวิวที่ช่วยให้เลือกได้จริง</h1>
+      <p class="lede">ทุกรีวิวอธิบายทิศทางรสชาติ วิธีชงที่เหมาะ และข้อควรพิจารณา เพราะคะแนนเพียงอย่างเดียวไม่สามารถเล่าเรื่องกาแฟได้ครบ</p>
+
+      <article class="featured-review">
+        <a class="featured-media" href="/reviews/laos-bolaven-coffee" tabindex="-1">
+          <img src="/reviews/laos-bolaven-cover.webp" alt="" width="1536" height="864" />
+        </a>
+        <div class="featured-copy">
+          <div class="eyebrow">รีวิวแหล่งปลูก · อ่าน 8 นาที</div>
+          <h2><a href="/reviews/laos-bolaven-coffee">กาแฟลาว โบลาเวน: ความหวานแบบถั่วและช็อกโกแลตจากที่ราบสูงภูเขาไฟ</a></h2>
+          <p>รู้จักโปรไฟล์รสชาติ แหล่งปลูก วิธีชง และสิ่งที่ควรดูก่อนเลือกซื้อกาแฟจากตอนใต้ของลาว</p>
+          <a class="text-link" href="/reviews/laos-bolaven-coffee">อ่านบทความ <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+
+      <div class="product-heading">
+        <div class="eyebrow">กาแฟคัดสรร</div>
+        <h2>รีวิวและคำแนะนำรายสินค้า</h2>
+      </div>
+      <div class="grid">{activeProducts.map(product => <ProductCard product={product} />)}</div>
+    </div>
+  </section>
+
+  <style>
+    .featured-review{display:grid;grid-template-columns:1.35fr .65fr;margin:42px 0 64px;background:var(--espresso);color:var(--cream);overflow:hidden;box-shadow:var(--shadow)}
+    .featured-media{min-height:360px;overflow:hidden}
+    .featured-media img{width:100%;height:100%;object-fit:cover}
+    .featured-copy{padding:42px;display:flex;flex-direction:column;justify-content:center}
+    .featured-copy .eyebrow{color:var(--latte)}
+    .featured-copy h2,.product-heading h2{font:700 clamp(1.8rem,3vw,2.75rem)/1.12 var(--serif);margin:.4em 0}
+    .featured-copy p{color:#d7c9b9}
+    .featured-copy .text-link{color:#f1d3a0}
+    .product-heading{margin-bottom:28px}
+    @media(max-width:780px){.featured-review{grid-template-columns:1fr}.featured-media{min-height:0;aspect-ratio:16/9}.featured-copy{padding:26px}.featured-copy h2{font-size:1.65rem}}
+  </style>
+</BaseLayout>
