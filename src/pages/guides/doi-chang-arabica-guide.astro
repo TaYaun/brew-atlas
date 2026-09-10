@@ -1,0 +1,141 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { activeProducts } from '../../data/products';
+
+const title = 'กาแฟอาราบิกาดอยช้าง คืออะไร? แหล่งปลูก รสชาติ และวิธีชง | Brew Atlas TH';
+const description = 'ทำความรู้จักกาแฟอาราบิกาดอยช้างจากเชียงราย ทั้งแหล่งปลูก ความสูง กระบวนการ รสชาติ วิธีเลือก และวิธีชงให้เหมาะกับตัวเอง';
+const image = '/guides/doi-chang-arabica.webp';
+const recommendedSlugs = ['escent-doi-chang-1kg', 'kafe-hmong-coffee-fruity-doi-chang'];
+const recommendedProducts = recommendedSlugs
+  .map(slug => activeProducts.find(product => product.slug === slug))
+  .filter(Boolean);
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'กาแฟอาราบิกาดอยช้าง: ทำความรู้จักกาแฟไทยจากภูเขาสู่แก้วกาแฟ',
+  description,
+  image: new URL(image, Astro.site).href,
+  datePublished: '2026-09-11',
+  dateModified: '2026-09-11',
+  inLanguage: 'th-TH',
+  author: { '@type': 'Organization', name: 'BREW ATLAS TH', url: new URL('/', Astro.site).href },
+  publisher: { '@type': 'Organization', name: 'BREW ATLAS TH', url: new URL('/', Astro.site).href },
+  mainEntityOfPage: new URL(Astro.url.pathname, Astro.site).href,
+};
+---
+
+<BaseLayout title={title} description={description} image={image} type="article" schema={schema}>
+  <main class="section">
+    <article class="wrap prose">
+      <div class="eyebrow">แหล่งปลูกกาแฟไทย · เชียงราย</div>
+      <h1>กาแฟอาราบิกาดอยช้าง: จากภูเขาสู่แก้วกาแฟ</h1>
+      <p class="lede">ทำไมดอยช้างจึงเป็นหนึ่งในชื่อสำคัญของกาแฟไทย และควรเลือกเมล็ดแบบไหนให้เข้ากับรสชาติและวิธีชงของคุณ</p>
+      <div class="article-meta">โดย BREW ATLAS TH · อัปเดต 11 กันยายน 2569 · อ่านประมาณ 8 นาที</div>
+
+      <img class="article-hero" src={image} alt="ไร่กาแฟอาราบิกาดอยช้าง จังหวัดเชียงราย พร้อมสรุปแหล่งปลูก ความสูง รสชาติ และกระบวนการ" width="1536" height="864" fetchpriority="high" />
+
+      <section class="quick-summary" aria-labelledby="quick-summary-title">
+        <div class="eyebrow">สรุปใน 30 วินาที</div>
+        <h2 id="quick-summary-title">กาแฟไทยที่มีตั้งแต่ช็อกโกแลตนุ่ม ๆ ถึงผลไม้สดใส</h2>
+        <div class="summary-grid">
+          <div><strong>แหล่งปลูก</strong><span>ดอยช้าง–วาวี จ.เชียงราย</span></div>
+          <div><strong>ความสูง</strong><span>ประมาณ 1,000–1,700 เมตร</span></div>
+          <div><strong>รสที่พบบ่อย</strong><span>ถั่ว ช็อกโกแลต คาราเมล และผลไม้</span></div>
+          <div><strong>เหมาะกับ</strong><span>Drip, Americano, Espresso และกาแฟนม</span></div>
+        </div>
+      </section>
+
+      <nav class="toc" aria-label="สารบัญบทความ">
+        <strong>อ่านตามหัวข้อ</strong>
+        <ol>
+          <li><a href="#what-is-doi-chang">อาราบิกาดอยช้างคืออะไร</a></li>
+          <li><a href="#process-and-flavor">กระบวนการและรสชาติ</a></li>
+          <li><a href="#choose">เลือกให้ตรงกับแก้วที่ชอบ</a></li>
+          <li><a href="#brew">สูตรชงตั้งต้น</a></li>
+          <li><a href="#recommended">กาแฟดอยช้างแนะนำ</a></li>
+        </ol>
+      </nav>
+
+      <h2 id="what-is-doi-chang">อาราบิกาดอยช้างคืออะไร</h2>
+      <p>กาแฟดอยช้างปลูกในพื้นที่ดอยช้างและบ้านใหม่พัฒนา ตำบลวาวี อำเภอแม่สรวย จังหวัดเชียงราย พื้นที่ภูเขาสูงประมาณ <strong>1,000–1,700 เมตรเหนือระดับน้ำทะเล</strong> มีอากาศเย็นกว่าพื้นราบ จึงเอื้อต่อการพัฒนาผลเชอร์รีอย่างช้า ๆ และเปิดโอกาสให้คัดเก็บผลสุกได้ละเอียดขึ้น</p>
+      <p>คำว่า <strong>Arabica</strong> บอกชนิดของกาแฟ แต่ไม่ได้รับประกันรสชาติหรือคุณภาพเพียงลำพัง สิ่งที่ทำให้แต่ละถุงต่างกันจริง ๆ คือสายพันธุ์ ความสุกของเชอร์รี การแปรรูป การคั่ว ความสด และฝีมือการชง</p>
+      <p>เรื่องราวของดอยช้างยังเชื่อมโยงกับการพัฒนาพื้นที่สูงและชุมชนอาข่า การปลูกกาแฟได้รับการส่งเสริมให้เป็นพืชเศรษฐกิจที่เหมาะกับภูมิประเทศ ก่อนพัฒนาเป็นระบบการผลิตที่ดูแลตั้งแต่ไร่ การคัดผล ไปจนถึงการแปรรูป ชื่อ “กาแฟดอยช้าง” จึงสะท้อนทั้งภูมิศาสตร์ ชุมชน และความรู้ที่สะสมมายาวนาน</p>
+
+      <aside class="callout"><strong>ความสูงสำคัญ แต่ไม่ใช่ทุกอย่าง:</strong> กาแฟที่ปลูกสูงไม่ได้อร่อยกว่าเสมอ ต้องพิจารณาสายพันธุ์ ดิน ร่มเงา ฝน ความสุก และการดูแลหลังเก็บเกี่ยวร่วมกัน</aside>
+
+      <h2 id="process-and-flavor">กระบวนการเปลี่ยนรสชาติอย่างไร</h2>
+      <p>หลังเก็บเกี่ยว ผู้ผลิตต้องคัดผลไม่สุกหรือมีตำหนิออก แล้วเลือกวิธีจัดการเนื้อผลรอบเมล็ด กระบวนการไม่ได้เป็นคะแนนคุณภาพ แต่เป็นตัวกำหนดบุคลิกสำคัญในถ้วย</p>
+
+      <div class="table-scroll" tabindex="0" role="region" aria-label="เปรียบเทียบกระบวนการแปรรูปกาแฟดอยช้าง">
+        <table>
+          <thead><tr><th>กระบวนการ</th><th>บุคลิกที่มักพบ</th><th>เหมาะกับคนที่ชอบ</th></tr></thead>
+          <tbody>
+            <tr><td>Washed</td><td>สะอาด โปร่ง แยกความเป็นกรดและกลิ่นได้ชัด</td><td>กาแฟดำที่ชัดเจน ดื่มแล้วจบสะอาด</td></tr>
+            <tr><td>Honey</td><td>หวานและมีบอดี้ขึ้น แต่ยังรักษาความใสไว้</td><td>ความสมดุลระหว่างผลไม้กับคาราเมล</td></tr>
+            <tr><td>Natural</td><td>ผลไม้สุก ความหวาน และบอดี้เด่นขึ้น</td><td>กลิ่นผลไม้ชัดและรสที่มีมิติ</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>กาแฟดอยช้างคั่วกลางถึงกลางเข้มมักให้โทน <strong>ถั่ว ช็อกโกแลต คาราเมล และน้ำตาลทรายแดง</strong> พร้อมบอดี้ปานกลางถึงเต็ม จึงดื่มง่ายและเข้ากับนม ส่วนคั่วอ่อนหรือกาแฟที่แปรรูปเพื่อเน้นความใส อาจเผยซิตรัส ดอกไม้ หรือผลไม้ได้มากขึ้น</p>
+
+      <h2 id="choose">เลือกเมล็ดให้ตรงกับแก้วที่ชอบ</h2>
+      <div class="roast-grid">
+        <article><span>Light</span><h3>คั่วอ่อน</h3><p>ผลไม้ ดอกไม้ ซิตรัส และความหวานโปร่ง เหมาะกับ Drip หรือ Pour Over</p></article>
+        <article><span>Medium</span><h3>คั่วกลาง</h3><p>คาราเมล ถั่ว และช็อกโกแลต สมดุลสำหรับ Drip, Americano และ Espresso</p></article>
+        <article><span>Medium–Dark</span><h3>คั่วกลางเข้ม</h3><p>โกโก้ ถั่วคั่ว และบอดี้แน่น เหมาะกับ Espresso และกาแฟนม</p></article>
+      </div>
+      <p>ก่อนซื้อ ให้ดูแหล่งผลิต กระบวนการ ระดับคั่ว วันที่คั่ว และคำแนะนำวิธีชงร่วมกัน คำว่า “Premium” หรือ “AA” อาจสะท้อนการคัดขนาดหรือเกรดในบางระบบ แต่ไม่ได้บอกว่ารสชาติจะถูกใจทุกคน</p>
+
+      <h2 id="brew">สูตรชงตั้งต้นที่นำไปปรับได้</h2>
+      <section class="brew-recipes">
+        <div><div class="eyebrow">Drip / Pour Over</div><h3>15 กรัม : น้ำ 240 กรัม</h3><p>เริ่มที่ 92–95°C และบดกลางค่อนละเอียด หากเปรี้ยวแหลมและบาง ให้บดละเอียดขึ้นเล็กน้อย; หากขม ฝาด หรือแห้ง ให้บดหยาบขึ้นหรือลดอุณหภูมิ</p></div>
+        <div><div class="eyebrow">Espresso</div><h3>18 กรัม : น้ำกาแฟ 36 กรัม</h3><p>ตั้งต้นที่ 25–32 วินาที คั่วกลางถึงกลางเข้มจะให้ฐานช็อกโกแลตและถั่วที่เข้ากับนมได้ดี จากนั้นปรับตามรสชาติและเครื่องชงจริง</p></div>
+      </section>
+      <p>ชิมซ้ำเมื่อกาแฟเย็นลงเล็กน้อย เพราะความหวานและกลิ่นผลไม้มักแยกชั้นได้ชัดขึ้น และควรปรับเพียงหนึ่งตัวแปรต่อครั้งเพื่อรู้ว่าอะไรทำให้รสดีขึ้น</p>
+
+      <section id="recommended" class="recommendations" aria-labelledby="recommended-title">
+        <div class="eyebrow">คัดสรรจากแคตตาล็อก</div>
+        <h2 id="recommended-title">กาแฟจากดอยช้างที่น่าลอง</h2>
+        <p>เลือกจากสไตล์การดื่มของคุณ รายละเอียด ราคา ตัวเลือกการบด และสต็อกล่าสุดให้ตรวจสอบบนหน้าร้าน Shopee ก่อนสั่งซื้อ</p>
+        <div class="recommendation-grid">
+          {recommendedProducts.map(product => product && (
+            <article class="product-pick">
+              <a class="pick-image" href={`/products/${product.slug}`}><img src={product.image} alt={`${product.brand} ${product.name}`} width="700" height="700" loading="lazy" /></a>
+              <div class="pick-copy">
+                <div class="eyebrow">{product.brand} · {product.roast}</div>
+                <h3><a href={`/products/${product.slug}`}>{product.name}</a></h3>
+                <p>{product.summary}</p>
+                <div class="pick-actions">
+                  <a class="btn" href={`/go/${product.slug}?utm_campaign=guide-doi-chang`} rel="sponsored nofollow">ดูราคาบน Shopee</a>
+                  <a class="text-link" href={`/products/${product.slug}`}>อ่านรายละเอียด →</a>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+        <small>ลิงก์ไปยัง Shopee เป็น Affiliate Link หากสั่งซื้อผ่านลิงก์ BREW ATLAS TH อาจได้รับค่าคอมมิชชัน โดยราคาไม่เพิ่มขึ้นสำหรับคุณ</small>
+      </section>
+
+      <h2>สรุป: ดอยช้างไม่ได้มีรสชาติแบบเดียว</h2>
+      <p>เสน่ห์ของกาแฟดอยช้างคือความยืดหยุ่น ตั้งแต่ถั่ว ช็อกโกแลต และคาราเมลที่ดื่มง่าย ไปจนถึงผลไม้และความซับซ้อนของล็อตคั่วอ่อน การเลือกเมล็ดที่ระบุข้อมูลชัดและชงให้เหมาะกับระดับคั่ว จะช่วยให้เห็นตัวตนของกาแฟไทยจากพื้นที่สูงได้ดีที่สุด</p>
+      <p><strong>ข้อควรจำ:</strong> ใช้ Tasting Notes เป็นเข็มทิศ ไม่ใช่คำตอบตายตัว รสที่รับรู้จริงยังเปลี่ยนไปตามน้ำ เครื่องบด สูตรชง ความสด และประสบการณ์ของผู้ดื่มแต่ละคน</p>
+
+      <section class="references" aria-labelledby="references-title">
+        <h2 id="references-title">แหล่งข้อมูล</h2>
+        <ol>
+          <li><a href="https://pd.jgic.jp/en/register/entry/139.html" rel="noopener noreferrer">GI Product Information — Doi Chaang Coffee</a></li>
+          <li><a href="https://drwakefield.com/news-and-views/the-doi-chaang-tale-of-green-coffee-beans-and-enlightened-business/" rel="noopener noreferrer">D R Wakefield — The Doi Chaang tale</a></li>
+          <li><a href="https://doichaangcoffee.co.th/en/about-us/from-earth-to-cup/" rel="noopener noreferrer">Doi Chaang Coffee — From Earth to Cup</a></li>
+        </ol>
+        <p><small>เจ้าของบทความ: BREW ATLAS TH · เนื้อหาเป็นข้อมูลเพื่อการเรียนรู้ ไม่ใช่ผลชิมของกาแฟทุกล็อตจากดอยช้าง</small></p>
+      </section>
+    </article>
+  </main>
+
+  <style>
+    .quick-summary{background:var(--espresso);color:var(--cream);padding:28px 30px;margin:0 0 28px}.quick-summary .eyebrow{color:var(--latte)}.quick-summary h2{font-size:2rem;margin:.25em 0 1em}.summary-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(255,255,255,.16)}.summary-grid div{display:flex;flex-direction:column;background:var(--espresso);padding:15px 18px}.summary-grid strong{color:#efd7b4}.summary-grid span{font-size:.86rem;color:#d8c9b7}.table-scroll{overflow-x:auto;margin:24px 0;border:1px solid var(--line)}.table-scroll table{min-width:650px;margin:0;border:0}.roast-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:24px 0}.roast-grid article{background:var(--cream);border-top:3px solid var(--coffee);padding:19px}.roast-grid span{color:var(--coffee);font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}.roast-grid h3{font:700 1.25rem var(--serif);margin:.3em 0}.roast-grid p{font-size:.84rem;color:var(--muted);margin:0}.brew-recipes{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0}.brew-recipes>div{border:1px solid var(--line);padding:22px}.brew-recipes h3{font:700 1.35rem var(--serif);margin:.35em 0}.recommendations{background:linear-gradient(135deg,#f8f4ec,#ead9bf);padding:30px;margin:42px 0}.recommendations>h2{font-size:2.3rem}.recommendation-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:22px 0}.product-pick{display:grid;grid-template-columns:145px 1fr;background:#fff;border:1px solid var(--line);overflow:hidden}.pick-image{background:#f4eee5}.pick-image img{width:100%;height:100%;min-height:210px;object-fit:contain}.pick-copy{padding:17px;display:flex;flex-direction:column}.pick-copy h3{font:700 1.15rem/1.25 var(--serif);margin:.35em 0}.pick-copy p{font-size:.8rem;color:var(--muted)}.pick-actions{display:flex;align-items:center;gap:13px;margin-top:auto}.pick-actions .btn{padding:8px 11px;font-size:.72rem}.pick-actions .text-link{font-size:.72rem}.recommendations>small{display:block;color:var(--muted)}.references{border-top:1px solid var(--line);margin-top:56px;padding-top:12px}.references h2{font-size:1.8rem}.references a{color:var(--coffee);text-decoration:underline;text-underline-offset:3px}
+    @media(max-width:700px){.prose h1{font-size:clamp(2rem,10vw,2.45rem);line-height:1.08}.article-hero{width:100%;height:auto;max-height:none;object-fit:contain;margin:20px 0 28px}.quick-summary{padding:22px}.quick-summary h2{font-size:1.6rem}.summary-grid{grid-template-columns:1fr}.roast-grid,.brew-recipes,.recommendation-grid{grid-template-columns:1fr}.recommendations{padding:20px;margin-inline:-1vw}.recommendations>h2{font-size:1.8rem}.product-pick{grid-template-columns:105px 1fr}.pick-image img{min-height:190px}.pick-actions{align-items:flex-start;flex-direction:column;gap:7px}.table-scroll{margin-inline:-4vw;border-left:0;border-right:0}.actions .btn{width:100%}}
+  </style>
+</BaseLayout>
