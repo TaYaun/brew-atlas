@@ -1,0 +1,150 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { activeProducts } from '../../data/products';
+
+const title = 'กาแฟปางขอน คืออะไร? อาราบิกาเชียงราย รสชาติและวิธีชง | Brew Atlas TH';
+const description = 'ทำความรู้จักกาแฟปางขอนจากเชียงราย ทั้งแหล่งปลูกใต้ร่มเงาป่า ระดับความสูง กระบวนการ รสชาติ วิธีเลือก และวิธีชง';
+const image = '/guides/pangkhon-arabica.webp';
+const relatedProduct = activeProducts.find(product => product.slug === 'roast-lab-bkk-african-blend');
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'กาแฟปางขอน: ทำความรู้จักอาราบิกาจากป่าและชุมชนบนภูเขาเชียงราย',
+  description,
+  image: new URL(image, Astro.site).href,
+  datePublished: '2026-09-11',
+  dateModified: '2026-09-11',
+  inLanguage: 'th-TH',
+  author: { '@type': 'Person', name: 'พี่หยวน — BREW ATLAS TH' },
+  publisher: { '@type': 'Organization', name: 'BREW ATLAS TH', url: new URL('/', Astro.site).href },
+  mainEntityOfPage: new URL(Astro.url.pathname, Astro.site).href,
+};
+---
+
+<BaseLayout title={title} description={description} image={image} type="article" schema={schema}>
+  <main class="section">
+    <article class="wrap prose">
+      <div class="eyebrow">แหล่งปลูกกาแฟไทย · เชียงราย</div>
+      <h1>กาแฟปางขอน: อาราบิกาจากป่าและชุมชนบนภูเขาเชียงราย</h1>
+      <p class="lede">กาแฟที่เล่าเรื่องของร่มเงาป่า วิถีชุมชน และรสชาติซึ่งเดินทางได้ตั้งแต่ช็อกโกแลตนุ่ม ๆ ไปจนถึงผลไม้และดอกไม้สดใส</p>
+      <div class="article-meta">โดย พี่หยวน BREW ATLAS TH · อัปเดต 11 กันยายน 2569 · อ่านประมาณ 8 นาที</div>
+
+      <img class="article-hero" src={image} alt="กาแฟปางขอนจากป่าและชุมชนบนภูเขาเชียงราย พร้อมสรุปความสูงและโปรไฟล์รสชาติ" width="1536" height="864" fetchpriority="high" />
+
+      <section class="quick-summary" aria-labelledby="pangkhon-summary">
+        <div class="eyebrow">สรุปใน 30 วินาที</div>
+        <h2 id="pangkhon-summary">กาแฟที่เชื่อมผู้คน ป่าไม้ และถ้วยที่มีชีวิตชีวา</h2>
+        <div class="summary-grid">
+          <div><strong>แหล่งปลูก</strong><span>ปางขอน จังหวัดเชียงราย</span></div>
+          <div><strong>ความสูง</strong><span>ประมาณ 1,250–1,450 เมตร</span></div>
+          <div><strong>รสที่พบบ่อย</strong><span>ช็อกโกแลต ผลไม้แห้ง ส้ม และดอกไม้</span></div>
+          <div><strong>เหมาะกับ</strong><span>Drip, Americano และ Espresso</span></div>
+        </div>
+      </section>
+
+      <nav class="toc" aria-label="สารบัญบทความ">
+        <strong>อ่านตามหัวข้อ</strong>
+        <ol>
+          <li><a href="#place">ปางขอนอยู่ที่ไหน</a></li>
+          <li><a href="#forest-community">ป่า ร่มเงา และชุมชน</a></li>
+          <li><a href="#process-flavor">กระบวนการและรสชาติ</a></li>
+          <li><a href="#choose-brew">เลือกและชงอย่างไร</a></li>
+          <li><a href="#related-coffee">กาแฟที่มีเมล็ดปางขอน</a></li>
+        </ol>
+      </nav>
+
+      <h2 id="place">ปางขอนอยู่ที่ไหน</h2>
+      <p>ปางขอนเป็นชุมชนบนพื้นที่สูงของจังหวัดเชียงราย อยู่ในภูมิประเทศภูเขาและบริเวณต้นน้ำของแม่น้ำกก แหล่งผลิตกาแฟหลายแห่งระบุความสูงประมาณ <strong>1,250–1,450 เมตรเหนือระดับน้ำทะเล</strong> ซึ่งสร้างสภาพอากาศเย็นและเหมาะกับกาแฟอาราบิกา</p>
+      <p>ตัวเลขความสูงอาจต่างกันตามแปลงและล็อตกาแฟ จึงควรอ่านข้อมูลจากถุงจริง ไม่ควรใช้ข้อมูลของกาแฟคนละล็อตแทนกัน ชื่อ “ปางขอน” บอกจุดเริ่มต้นทางภูมิศาสตร์ แต่ประสบการณ์ในถ้วยยังขึ้นกับสายพันธุ์ ความสุก การแปรรูป การคั่ว และความสด</p>
+
+      <h2 id="forest-community">เมื่อกาแฟเติบโตใต้ร่มเงาป่า</h2>
+      <p>กาแฟปางขอนสะท้อนความสัมพันธ์ระหว่างอาชีพของชุมชนกับระบบนิเวศ การปลูกใต้ต้นไม้ใหญ่ช่วยลดแดดและความเครียดจากความร้อน ขณะเดียวกันต้นไม้ยังช่วยรักษาความชื้นและโครงสร้างของพื้นที่ภูเขา แต่ร่มเงาก็ต้องสมดุล เพราะความชื้นสูงเกินไปอาจเพิ่มความเสี่ยงต่อโรคพืช</p>
+      <p>การส่งเสริมกาแฟอาราบิกาในพื้นที่ทำงานร่วมกับเกษตรกรอาข่าและเมี่ยน เพื่อสร้างรายได้ที่อยู่ร่วมกับการดูแลป่าได้ อย่างไรก็ตาม ชุมชนยังต้องรับมือกับภัยแล้ง ไฟป่า อุณหภูมิที่ผันผวน และผลผลิตที่ไม่แน่นอน การเลือกกาแฟที่ระบุผู้ผลิตและแหล่งที่มาชัดเจนจึงช่วยให้เราเห็นคุณค่าของงานเบื้องหลังเมล็ดได้มากกว่า Tasting Notes เพียงอย่างเดียว</p>
+
+      <aside class="callout"><strong>Shade-Grown ไม่ได้แปลว่าอร่อยโดยอัตโนมัติ:</strong> ร่มเงาเป็นส่วนหนึ่งของระบบสวน คุณภาพจริงยังต้องอาศัยผลเชอร์รีสุก การคัดแยก การตาก และการเก็บรักษาที่ดี</aside>
+
+      <h2 id="process-flavor">กระบวนการพารสชาติไปคนละทาง</h2>
+      <p>ปางขอนพบได้ทั้ง Washed, Honey และ Natural รวมถึง Washed ที่ใช้แนวทางคล้าย Kenya-style เพื่อเน้นความสะอาดและความสดใส คำนี้หมายถึงแนวทางการแปรรูป ไม่ได้หมายความว่าเมล็ดมาจากประเทศเคนยา</p>
+
+      <div class="table-scroll" tabindex="0" role="region" aria-label="เปรียบเทียบกระบวนการกาแฟปางขอน">
+        <table>
+          <thead><tr><th>กระบวนการ</th><th>บุคลิกที่อาจพบ</th><th>เหมาะกับคนที่ชอบ</th></tr></thead>
+          <tbody>
+            <tr><td>Washed</td><td>สะอาด สดใส ส้ม ดอกไม้ และแยกโน้ตง่าย</td><td>กาแฟโปร่งและมีความเป็นกรดสมดุล</td></tr>
+            <tr><td>Honey</td><td>หวานขึ้น บอดี้ปานกลาง แต่ยังมีความใส</td><td>ผลไม้ที่เชื่อมกับคาราเมลอย่างนุ่มนวล</td></tr>
+            <tr><td>Natural</td><td>ผลไม้สุก ความหวาน และบอดี้เด่น</td><td>กลิ่นผลไม้ชัดและเนื้อสัมผัสมากขึ้น</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p><strong>คั่วกลาง</strong> มักเผยดาร์กช็อกโกแลต ผลไม้แห้ง คาราเมล และบอดี้ระดับกลาง เหมาะกับการดื่มทุกวัน ส่วน <strong>คั่วอ่อนแบบ Washed</strong> อาจให้ส้ม ดอกไม้ ชาดำ น้ำผึ้ง หรือความหวานแบบอ้อยที่มีชีวิตชีวามากขึ้น ความเปรี้ยวที่สมดุลไม่ใช่ข้อเสีย แต่ช่วยให้ถ้วยไม่ทึบและรับรู้ความหวานได้ชัดขึ้น</p>
+
+      <section class="comparison" aria-labelledby="comparison-title">
+        <div>
+          <div class="eyebrow">ปางขอน</div>
+          <h3>ผลไม้ · ดอกไม้ · ช็อกโกแลต</h3>
+          <p>ภาพรวมมักถูกนำเสนอด้วยความสดใส ผลไม้แห้ง และความหวาน แต่ขึ้นกับ Process และ Roast</p>
+        </div>
+        <div>
+          <div class="eyebrow">ดอยช้าง</div>
+          <h3>ถั่ว · คาราเมล · บอดี้</h3>
+          <p>คั่วกลางถึงเข้มมักเน้นความกลมและรองรับนมได้ดี แต่ล็อตคั่วอ่อนก็ให้ผลไม้ได้เช่นกัน</p>
+          <a href="/guides/doi-chang-arabica-guide">อ่านเรื่องกาแฟดอยช้าง →</a>
+        </div>
+      </section>
+
+      <h2 id="choose-brew">เลือกและชงให้ตรงกับรสที่ชอบ</h2>
+      <div class="choice-grid">
+        <article><span>สดใส</span><h3>คั่วอ่อน + Washed</h3><p>เหมาะกับ Drip หรือ Pour Over เพื่อแสดงส้ม ดอกไม้ และความหวานสะอาด</p></article>
+        <article><span>สมดุล</span><h3>คั่วกลาง</h3><p>ช็อกโกแลต ผลไม้แห้ง และคาราเมล ใช้ได้กับ Drip, Aeropress และ Americano</p></article>
+        <article><span>เข้มเต็ม</span><h3>คั่วกลางเข้ม</h3><p>โกโก้ ถั่วคั่ว และบอดี้แน่น เหมาะกับ Espresso, Moka Pot และเมนูนม</p></article>
+      </div>
+
+      <section class="brew-box" aria-labelledby="brew-title">
+        <div class="eyebrow">สูตรตั้งต้นสำหรับ Drip</div>
+        <h3 id="brew-title">กาแฟ 15 กรัม · น้ำ 240 กรัม · 92–94°C</h3>
+        <p>บดระดับกลางค่อนละเอียดและรินเป็นช่วง หากเปรี้ยวแหลมและบาง ให้บดละเอียดขึ้นหรือรินช้าลงเล็กน้อย หากขม ฝาด หรือแห้ง ให้บดหยาบขึ้นหรือลดอุณหภูมิ แล้วชิมซ้ำเมื่อกาแฟเย็นลงเพื่อจับความหวานและผลไม้ได้ง่ายขึ้น</p>
+      </section>
+
+      <h2 id="related-coffee">กาแฟที่มีเมล็ดจากปางขอนในแคตตาล็อก</h2>
+      {relatedProduct ? (
+        <aside class="product-pick" aria-label="กาแฟเบลนด์ที่มีเมล็ดจากปางขอน">
+          <a class="pick-image" href={`/products/${relatedProduct.slug}`}><img src={relatedProduct.image} alt={`${relatedProduct.brand} ${relatedProduct.name}`} width="700" height="700" loading="lazy" /></a>
+          <div class="pick-copy">
+            <div class="eyebrow">{relatedProduct.brand} · มีเมล็ดปางขอนในเบลนด์</div>
+            <h3><a href={`/products/${relatedProduct.slug}`}>{relatedProduct.name}</a></h3>
+            <p>House Blend จาก Ethiopia, Kenya และเมล็ดไทยปางขอน โทน Fruity, Berry, Sugar Cane, Milk Chocolate และ Vanilla เหมาะกับ Modern Espresso และ Filter</p>
+            <p class="clarification"><strong>หมายเหตุ:</strong> รายการนี้เป็น Blend ไม่ใช่กาแฟปางขอน Single Origin</p>
+            <div class="pick-actions">
+              <a class="btn" href={`/go/${relatedProduct.slug}?utm_campaign=guide-pangkhon`} rel="sponsored nofollow">ดูราคาบน Shopee</a>
+              <a class="text-link" href={`/products/${relatedProduct.slug}`}>อ่านรายละเอียด →</a>
+            </div>
+          </div>
+        </aside>
+      ) : (
+        <p class="notice">ขณะนี้ยังไม่มีกาแฟปางขอนในแคตตาล็อก หากมีสินค้าที่ระบุแหล่งปลูกชัดเจน เราจะเพิ่มคำแนะนำในส่วนนี้</p>
+      )}
+      <p class="affiliate-note">ลิงก์ไปยัง Shopee เป็น Affiliate Link หากสั่งซื้อผ่านลิงก์ BREW ATLAS TH อาจได้รับค่าคอมมิชชัน โดยราคาไม่เพิ่มขึ้นสำหรับคุณ</p>
+
+      <h2>สรุป: ถ้วยกาแฟที่มีทั้งป่าและผู้คนอยู่เบื้องหลัง</h2>
+      <p>กาแฟปางขอนน่าสนใจทั้งในฐานะอาราบิกาพื้นที่สูงและเรื่องราวของชุมชน รสชาติอาจเดินทางจากดาร์กช็อกโกแลตและผลไม้แห้ง ไปจนถึงส้ม ดอกไม้ และความหวานสดใส การดูข้อมูลแหล่งปลูก Process ระดับคั่ว และวันที่คั่วร่วมกัน จะช่วยให้เลือกเมล็ดได้แม่นกว่าการดูคำว่า “100% Arabica” เพียงอย่างเดียว</p>
+      <p><strong>ข้อควรจำ:</strong> ปางขอนไม่มีรสชาติเดียวทุกล็อต ใช้ Tasting Notes เป็นเข็มทิศ แล้วตัดสินจากการชิมจริงของคุณ</p>
+
+      <section class="references" aria-labelledby="references-title">
+        <h2 id="references-title">แหล่งข้อมูล</h2>
+        <ol>
+          <li><a href="https://ozonecoffee.co.uk/pages/coffee-producer-beanspire-doi-pangkhon" rel="noopener noreferrer">Ozone Coffee Roasters — Beanspire, Doi Pangkhon</a></li>
+          <li><a href="https://suzuki-coffee.com/store/coffee/single-origin-coffee/pangkhon/" rel="noopener noreferrer">Suzuki Coffee — กาแฟปางขอน อาราบิก้า 100%</a></li>
+          <li><a href="https://th.boell.org/en/2022/07/15/coffee-chiangrai" rel="noopener noreferrer">Heinrich Böll Stiftung — Growing Coffee for Sustainable Agriculture</a></li>
+        </ol>
+        <p><small>ผู้เขียน: พี่หยวน BREW ATLAS TH · เนื้อหาเป็นภาพรวมของแหล่งปลูก ไม่ใช่ผลชิมของกาแฟปางขอนทุกล็อต</small></p>
+      </section>
+    </article>
+  </main>
+
+  <style>
+    .quick-summary{background:var(--espresso);color:var(--cream);padding:28px 30px;margin:0 0 28px}.quick-summary .eyebrow{color:var(--latte)}.quick-summary h2{font-size:2rem;margin:.25em 0 1em}.summary-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(255,255,255,.16)}.summary-grid div{display:flex;flex-direction:column;background:var(--espresso);padding:15px 18px}.summary-grid strong{color:#efd7b4}.summary-grid span{font-size:.86rem;color:#d8c9b7}.table-scroll{overflow-x:auto;margin:24px 0;border:1px solid var(--line)}.table-scroll table{min-width:650px;margin:0;border:0}.comparison{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);margin:34px 0}.comparison>div{background:var(--cream);padding:24px}.comparison h3{font:700 1.35rem var(--serif);margin:.35em 0}.comparison p{font-size:.85rem;color:var(--muted)}.comparison a{color:var(--coffee);font-weight:700;font-size:.8rem}.choice-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:24px 0}.choice-grid article{background:var(--cream);border-top:3px solid var(--forest);padding:19px}.choice-grid span{color:var(--coffee);font-size:.68rem;font-weight:700;letter-spacing:.14em}.choice-grid h3{font:700 1.17rem var(--serif);margin:.3em 0}.choice-grid p{font-size:.82rem;color:var(--muted);margin:0}.brew-box{border:1px solid var(--line);border-left:4px solid var(--coffee);padding:24px;margin:28px 0}.brew-box h3{font:700 1.45rem var(--serif);margin:.35em 0}.product-pick{display:grid;grid-template-columns:230px 1fr;background:linear-gradient(135deg,#f8f4ec,#ead9bf);border:1px solid var(--line);overflow:hidden;margin:24px 0}.pick-image{background:#fff}.pick-image img{width:100%;height:100%;min-height:300px;object-fit:contain}.pick-copy{padding:25px;display:flex;flex-direction:column}.pick-copy h3{font:700 1.4rem/1.2 var(--serif);margin:.35em 0}.pick-copy p{color:var(--muted)}.clarification{font-size:.8rem}.pick-actions{display:flex;align-items:center;gap:16px;margin-top:auto}.pick-actions .btn{padding:9px 13px}.affiliate-note{font-size:.78rem;color:var(--muted)}.references{border-top:1px solid var(--line);margin-top:56px;padding-top:12px}.references h2{font-size:1.8rem}.references a{color:var(--coffee);text-decoration:underline;text-underline-offset:3px}
+    @media(max-width:700px){.prose h1{font-size:clamp(2rem,10vw,2.45rem);line-height:1.08}.article-hero{width:100%;height:auto;max-height:none;object-fit:contain;margin:20px 0 28px}.quick-summary{padding:22px}.quick-summary h2{font-size:1.6rem}.summary-grid,.comparison,.choice-grid{grid-template-columns:1fr}.product-pick{grid-template-columns:115px 1fr}.pick-image img{min-height:250px}.pick-copy{padding:16px}.pick-copy h3{font-size:1.05rem}.pick-copy>p:not(.clarification){font-size:.78rem}.pick-actions{align-items:flex-start;flex-direction:column;gap:7px}.pick-actions .btn{font-size:.7rem;padding:8px}.table-scroll{margin-inline:-4vw;border-left:0;border-right:0}}
+  </style>
+</BaseLayout>
