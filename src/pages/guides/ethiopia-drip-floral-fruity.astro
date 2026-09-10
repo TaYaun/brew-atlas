@@ -1,0 +1,181 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'สูตรชง Drip กาแฟเอธิโอเปีย เน้น Floral และ Fruity | Brew Atlas TH';
+const description = 'สูตร Drip กาแฟเอธิโอเปีย 15:250 พร้อมจังหวะริน อุณหภูมิ และตารางแก้รส เพื่อดึงกลิ่น Floral และ Fruity ให้ชัดขึ้น';
+const image = '/guides/ethiopia-drip-floral-fruity.webp';
+const pageUrl = new URL(Astro.url.pathname, Astro.site).href;
+const imageUrl = new URL(image, Astro.site).href;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: 'สูตรชง Drip กาแฟเอธิโอเปีย ดึงรส Floral และ Fruity ให้ชัดที่สุด',
+  description,
+  image: imageUrl,
+  url: pageUrl,
+  totalTime: 'PT3M',
+  yield: 'กาแฟดริป 1 แก้ว ประมาณ 220–230 มิลลิลิตร',
+  author: { '@type': 'Organization', name: 'Brew Atlas TH', url: new URL('/', Astro.site).href },
+  supply: [
+    { '@type': 'HowToSupply', name: 'เมล็ดกาแฟเอธิโอเปียคั่วอ่อนหรืออ่อนปานกลาง 15 กรัม' },
+    { '@type': 'HowToSupply', name: 'น้ำสะอาด 250 กรัม อุณหภูมิ 92–94°C' },
+    { '@type': 'HowToSupply', name: 'กระดาษกรอง' }
+  ],
+  tool: [
+    { '@type': 'HowToTool', name: 'ดริปเปอร์ทรงกรวย' },
+    { '@type': 'HowToTool', name: 'เครื่องบดกาแฟ' },
+    { '@type': 'HowToTool', name: 'เครื่องชั่งพร้อมตัวจับเวลา' },
+    { '@type': 'HowToTool', name: 'กาต้มน้ำปากคอห่าน' }
+  ],
+  step: [
+    { '@type': 'HowToStep', name: 'เตรียมอุปกรณ์', text: 'ล้างกระดาษกรอง อุ่นอุปกรณ์ บดกาแฟ 15 กรัมระดับกลางค่อนละเอียด และเกลี่ยผิวกาแฟให้เรียบ' },
+    { '@type': 'HowToStep', name: 'Bloom', text: 'รินน้ำ 45 กรัมให้ทั่ว รอจนถึงเวลา 40–45 วินาที' },
+    { '@type': 'HowToStep', name: 'รินช่วงแรก', text: 'รินต่อเนื่องจนถึงน้ำหนักรวม 150 กรัม ภายในเวลาประมาณ 1:10–1:20 นาที' },
+    { '@type': 'HowToStep', name: 'รินช่วงสุดท้าย', text: 'รินจนถึงน้ำหนักรวม 250 กรัม หยุดรินราว 1:45–2:00 นาที และปล่อยให้ไหลจบที่ 2:45–3:15 นาที' },
+    { '@type': 'HowToStep', name: 'ชิมและปรับ', text: 'หมุนเซิร์ฟเวอร์เบา ๆ รอให้อุณหภูมิลดลง แล้วชิมเพื่อปรับขนาดบดหรืออุณหภูมิครั้งละหนึ่งตัวแปร' }
+  ]
+};
+---
+
+<BaseLayout title={title} description={description} image={image} type="article" schema={schema}>
+  <main class="section">
+    <article class="wrap prose">
+      <div class="eyebrow">การชงกาแฟ · กาแฟเอธิโอเปีย</div>
+      <h1>สูตรชง Drip กาแฟเอธิโอเปีย ดึงรส Floral และ Fruity ให้ชัดที่สุด</h1>
+      <p class="lede">เริ่มจากสูตร 15:250 ที่ทำซ้ำได้ แล้วปรับทีละตัวแปรเพื่อให้กลิ่นดอกไม้ ผลไม้ และความหวานของเมล็ดแต่ละตัวแสดงออกอย่างชัดเจน</p>
+      <div class="article-meta">อัปเดต กันยายน 2569 · อ่านประมาณ 12 นาที</div>
+      <img class="article-hero" src={image} alt="เรื่องราวกาแฟเอธิโอเปีย กระบวนการ Washed และ Natural พร้อมแหล่งปลูก Yirgacheffe Sidamo และ Guji" width="1536" height="1024" fetchpriority="high" />
+
+      <div class="callout recipe-summary">
+        <strong>สูตรตั้งต้น:</strong> กาแฟ 15 กรัม · น้ำ 250 กรัม · 92–94°C · เวลาสกัดรวม 2:45–3:15 นาที
+      </div>
+
+      <nav class="toc" aria-label="สารบัญบทความ">
+        <strong>สารบัญ</strong>
+        <ol>
+          <li><a href="#choose-beans">เลือกเมล็ดให้ตรงรสที่ต้องการ</a></li>
+          <li><a href="#equipment">อุปกรณ์และวัตถุดิบ</a></li>
+          <li><a href="#recipe">สูตร Bloom + 2 จังหวะริน</a></li>
+          <li><a href="#taste">อ่านรสและแก้สูตร</a></li>
+          <li><a href="#floral-fruity">ปรับให้ Floral หรือ Fruity เด่นขึ้น</a></li>
+        </ol>
+      </nav>
+
+      <p>กาแฟเอธิโอเปียมีเสน่ห์จากกลิ่นดอกไม้ ผลไม้ และความหวานที่ซับซ้อน โดยทั่วไปกาแฟแบบ <strong>Washed</strong> มักให้ความสะอาดและความใสของรส ส่วนแบบ <strong>Natural</strong> มักแสดงโทนผลไม้สุก เบอร์รี และความหวานชัดกว่า อย่างไรก็ตาม รสจริงยังขึ้นอยู่กับแหล่งปลูก สายพันธุ์ การแปรรูป การคั่ว และอายุเมล็ดด้วย</p>
+      <p>การดึงบุคลิกเหล่านี้ออกมาไม่ได้ขึ้นอยู่กับเมล็ดเพียงอย่างเดียว แต่เป็นความสัมพันธ์ระหว่าง <strong>ขนาดการบด อุณหภูมิน้ำ สัดส่วนกาแฟต่อน้ำ คุณภาพน้ำ และจังหวะการริน</strong> สูตรนี้จึงออกแบบให้ได้ถ้วยที่ใส หอม หวาน และยังมีบอดี้พอดื่มง่าย</p>
+
+      <h2 id="choose-beans">1. เลือกเมล็ดกาแฟให้ตรงรสที่ต้องการ</h2>
+      <p>หากต้องการ Floral ที่สะอาดและเด่น ลองเริ่มจากกาแฟเอธิโอเปียแบบ Washed ซึ่งระบุโน้ตดอกมะลิ เบอร์กาม็อต เลมอน หรือชาขาว กาแฟจาก Yirgacheffe หลายล็อตมักเหมาะกับแนวทางนี้ เพราะมีโอกาสให้ความสว่างและความใสสูง</p>
+      <p>หากต้องการ Fruity ที่หวานและมีมิติ ลองเลือก Natural หรือ Anaerobic Natural ที่ระบุโน้ตเบอร์รี พีช องุ่น หรือผลไม้เมืองร้อน กาแฟจาก Sidamo และ Guji หลายล็อตมีบุคลิกเช่นนี้ แต่ควรหลีกเลี่ยงการสกัดแรงเกินไป เพราะความขม ฝาด หรือกลิ่นหมักอาจเด่นจนกลบรสผลไม้</p>
+      <p>คั่วอ่อนถึงคั่วอ่อนปานกลางเป็นจุดเริ่มต้นที่ดี พักเมล็ดหลังคั่วประมาณ 7–14 วัน หรือทำตามคำแนะนำของโรงคั่ว กาแฟที่ยังคายก๊าซมากอาจให้การไหลและรสชาติไม่สม่ำเสมอ</p>
+
+      <aside class="coffee-picks" aria-label="เมล็ดกาแฟเอธิโอเปียที่เหมาะกับสูตร">
+        <div class="eyebrow">เมล็ดที่เข้ากับสูตรนี้</div>
+        <h3>เริ่มทดลองจากโปรไฟล์ที่คุณชอบ</h3>
+        <ul>
+          <li><a href="/products/kafe-hmong-ethiopia-lily"><strong>Ethiopia Lily Coffee</strong></a> — โทน Floral และ Berry สำหรับถ้วยสดใส</li>
+          <li><a href="/products/kafe-hmong-ethiopia-hand-yirgacheffe"><strong>Ethiopia Hand — Yirgacheffe</strong></a> — Anaerobic Natural ไม่แต่งกลิ่น โทนองุ่น บลูเบอร์รี และเสาวรส</li>
+          <li><a href="/products/kafe-hmong-ethiopia-art-coffee"><strong>Ethiopia Art Coffee</strong></a> — โทน Strawberry, White Rose และ Black Tea โดยหน้าร้านระบุแนวทาง Infused</li>
+        </ul>
+        <small>ลิงก์หน้าสินค้าอาจเป็น Affiliate Link หากสั่งซื้อ Brew Atlas TH อาจได้รับค่าคอมมิชชันโดยไม่มีค่าใช้จ่ายเพิ่มสำหรับคุณ</small>
+      </aside>
+
+      <h2 id="equipment">2. อุปกรณ์และวัตถุดิบ</h2>
+      <div class="table-scroll" tabindex="0" role="region" aria-label="ตารางอุปกรณ์และวัตถุดิบ">
+        <table>
+          <thead><tr><th>รายการ</th><th>คำแนะนำ</th></tr></thead>
+          <tbody>
+            <tr><td>ดริปเปอร์</td><td>V60 ขนาด 01 หรือ 02 หรือดริปเปอร์ทรงกรวยที่ระบายน้ำได้ดี</td></tr>
+            <tr><td>กาแฟ</td><td>15 กรัม คั่วอ่อนหรืออ่อนปานกลาง</td></tr>
+            <tr><td>น้ำ</td><td>250 กรัม อุณหภูมิ 92–94°C</td></tr>
+            <tr><td>เครื่องบด</td><td>เฟืองบดสม่ำเสมอและปรับระดับได้</td></tr>
+            <tr><td>กระดาษกรอง</td><td>เลือกขนาดให้ตรงกับดริปเปอร์และล้างด้วยน้ำร้อนก่อนใช้</td></tr>
+            <tr><td>เครื่องชั่ง</td><td>มีตัวจับเวลาและละเอียดอย่างน้อย 0.1 กรัม</td></tr>
+            <tr><td>กาต้มน้ำ</td><td>กาปากคอห่านช่วยควบคุมทิศทางและอัตราการไหล</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>คุณภาพน้ำมีผลต่อความชัดของกลิ่นมาก น้ำที่มีแร่ธาตุสูงเกินไปอาจทำให้รสทึบ ขณะที่น้ำอ่อนมากอาจให้ถ้วยบางและขาดความหวาน หากไม่มีน้ำสำหรับชงกาแฟโดยเฉพาะ ให้ใช้น้ำดื่มรสสะอาด ไม่มีกลิ่นคลอรีน และไม่กระด้างชัดเจน</p>
+
+      <h2 id="recipe">3. สูตรชงแบบ Bloom + 2 จังหวะริน</h2>
+      <p>จุดสำคัญคือรักษากระแสน้ำให้คงที่และไม่ปล่อยระดับน้ำสูงเกินจำเป็น เพราะระดับน้ำและแรงรินมีผลต่อการกวนชั้นกาแฟและความเร็วในการไหล</p>
+
+      <h3>ขั้นตอนที่ 1: เตรียมดริปเปอร์และกาแฟ</h3>
+      <p>ล้างกระดาษกรองด้วยน้ำร้อนเพื่อกำจัดกลิ่นกระดาษและอุ่นอุปกรณ์ เทน้ำทิ้ง จากนั้นบดกาแฟ 15 กรัมระดับ <strong>กลางค่อนละเอียด</strong> เริ่มใกล้เคียงน้ำตาลทรายละเอียด แล้วเกลี่ยผิวกาแฟให้เรียบ</p>
+      <p>เริ่มที่ 93°C สำหรับ Washed และ 92°C สำหรับ Natural ที่มีโทนหมักชัด หากกาแฟคั่วอ่อนให้เพียงรสเปรี้ยวแหลม ลองเพิ่มเป็น 94°C เพื่อช่วยดึงความหวานและเนื้อสัมผัส</p>
+
+      <h3>ขั้นตอนที่ 2: Bloom เพื่อเปิดกลิ่น</h3>
+      <p>เริ่มจับเวลาแล้วรินน้ำ 45 กรัมให้ทั่วผงกาแฟ รินเป็นวงเล็กจากกลางออกด้านนอกโดยไม่ชิดขอบกระดาษ หากยังมีจุดแห้ง ให้หมุนดริปเปอร์เบา ๆ เพียงครั้งเดียว</p>
+      <p>รอจนถึง 40–45 วินาที เพื่อให้ก๊าซระบายและน้ำสัมผัสผงกาแฟสม่ำเสมอขึ้น เมล็ดที่คั่วใหม่และฟูมากอาจต้องเพิ่มเวลา Bloom เล็กน้อย</p>
+
+      <h3>ขั้นตอนที่ 3: รินช่วงแรกถึง 150 กรัม</h3>
+      <p>เมื่อถึง 45 วินาที รินน้ำต่อเนื่องช้า ๆ จนน้ำหนักรวม 150 กรัม ภายในเวลาประมาณ 1:10–1:20 นาที รักษากระแสน้ำให้สม่ำเสมอและอยู่ใกล้ผิวกาแฟ ไม่รินแรงจนชั้นกาแฟถูกรบกวนมากเกินไป</p>
+
+      <h3>ขั้นตอนที่ 4: รินช่วงสุดท้ายถึง 250 กรัม</h3>
+      <p>เมื่อน้ำลดลงจนเกือบเห็นผิวกาแฟ ให้รินต่อจนถึงน้ำหนักรวม 250 กรัมด้วยวงรินเล็กและสม่ำเสมอ จบรินประมาณ 1:45–2:00 นาที แล้วปล่อยให้น้ำไหลหมด โดยตั้งเป้าเวลารวม 2:45–3:15 นาที</p>
+      <p>ยกดริปเปอร์ออก หมุนเซิร์ฟเวอร์เบา ๆ เพื่อผสมชั้นกาแฟ แล้วรอให้เย็นลงเล็กน้อยก่อนชิม กลิ่น Floral และ Fruity มักรับรู้ได้ชัดขึ้นเมื่อกาแฟไม่ร้อนจัด</p>
+
+      <h2 id="taste">4. อ่านรสในถ้วยและแก้สูตร</h2>
+      <p>ถ้วยที่สมดุลควรมีกลิ่นหอมก่อนจิบ ความเปรี้ยวคล้ายซิตรัสหรือผลไม้สด ความหวานที่ค่อย ๆ ชัดขึ้น และปลายรสสะอาดโดยไม่ฝาดหรือขมติดลิ้น</p>
+      <div class="table-scroll" tabindex="0" role="region" aria-label="ตารางวิเคราะห์และแก้รสกาแฟ">
+        <table>
+          <thead><tr><th>ลักษณะที่พบ</th><th>สาเหตุที่เป็นไปได้</th><th>วิธีปรับครั้งถัดไป</th></tr></thead>
+          <tbody>
+            <tr><td>เปรี้ยวแหลม บาง และจบเร็ว</td><td>สกัดน้อยหรือบดหยาบเกินไป</td><td>บดละเอียดขึ้นเล็กน้อย หรือเพิ่มอุณหภูมิ 1°C</td></tr>
+            <tr><td>ขม ฝาด และกลิ่นดอกไม้หาย</td><td>สกัดมากหรือบดละเอียดเกินไป</td><td>บดหยาบขึ้น ลดอุณหภูมิ หรือรินเบาลง</td></tr>
+            <tr><td>กลิ่นหอมดีแต่รสจาง</td><td>ใช้น้ำมากหรือกาแฟมีบอดี้ต่ำ</td><td>ลดน้ำเหลือ 230–240 กรัม หรือบดละเอียดขึ้นเล็กน้อย</td></tr>
+            <tr><td>ผลไม้ชัดแต่รสหมักหนัก</td><td>การสกัดหรือการกวนแรงเกินไปสำหรับ Natural ล็อตนั้น</td><td>ลดอุณหภูมิ 1–2°C และลดการหมุนหรือกวน</td></tr>
+            <tr><td>แต่ละรอบให้รสไม่เหมือนกัน</td><td>การรินไม่คงที่หรือผงกาแฟไม่เรียบ</td><td>คุมจังหวะริน เกลี่ยผง และใช้อัตราการไหลให้สม่ำเสมอ</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout"><strong>ปรับทีละปัจจัย:</strong> หากเปลี่ยนอุณหภูมิ ขนาดบด และวิธีรินพร้อมกัน คุณจะระบุไม่ได้ว่าตัวแปรใดทำให้ถ้วยดีขึ้นหรือแย่ลง จดสูตรและผลชิมทุกครั้งจะช่วยให้หา Sweet Spot ได้เร็วกว่า</div>
+
+      <h2 id="floral-fruity">5. ทำให้ Floral หรือ Fruity เด่นขึ้น</h2>
+      <h3>หากต้องการ Floral ที่ชัดและใส</h3>
+      <p>ใช้กาแฟ Washed อุณหภูมิประมาณ 93–94°C และรินอย่างนุ่มนวลสม่ำเสมอ หลีกเลี่ยงการคนหรือหมุนดริปเปอร์แรง เพราะการกวนมากอาจเพิ่มบอดี้และความฝาดจนบดบังกลิ่นดอกไม้ แก้วเสิร์ฟที่ปากแคบเล็กน้อยช่วยรวบรวมกลิ่นให้รับรู้ได้ง่ายขึ้น</p>
+
+      <h3>หากต้องการ Fruity ที่หวานและฉ่ำ</h3>
+      <p>ใช้กาแฟ Natural ที่ 91–93°C และไม่ปล่อยเวลาสกัดยาวเกินไป หากผลไม้ยังไม่ชัด ให้บดละเอียดขึ้นเพียงเล็กน้อยหรือเพิ่มอุณหภูมิครั้งละ 1°C หากรสผลไม้กลายเป็นกลิ่นหมักหนักหรือมีความขม ให้ลดอุณหภูมิและลดการกวน</p>
+
+      <h2>บทสรุป</h2>
+      <p>สูตร 15:250 เป็นจุดเริ่มต้นที่เหมาะสำหรับกาแฟเอธิโอเปียที่ต้องการเน้น Floral และ Fruity แต่ไม่มีสูตรเดียวที่แทนการชิมเมล็ดจริงได้ทั้งหมด เริ่มจากควบคุม <strong>ขนาดบด อุณหภูมิ น้ำหนักน้ำ และเวลาสกัด</strong> แล้วเปลี่ยนทีละตัวแปร</p>
+      <p>เมื่อถ้วยมีความใส หวาน และหอมชัด แสดงว่าการสกัดมาถูกทาง จากนั้นจึงค่อยเลือกบุคลิกที่ชอบ ไม่ว่าจะเป็นความสดใสแบบดอกมะลิและเลมอน หรือความฉ่ำหวานแบบเบอร์รีและพีช</p>
+
+      <div class="actions">
+        <a class="btn" href="/products?origin=Ethiopia">ดูกาแฟเอธิโอเปียแนะนำ</a>
+        <a class="btn secondary" href="/guides/pour-over-ratio-guide">อ่านคู่มืออัตราส่วน Pour Over</a>
+      </div>
+
+      <section class="references" aria-labelledby="references-heading">
+        <h2 id="references-heading">แหล่งข้อมูลเพิ่มเติม</h2>
+        <ol>
+          <li><a href="https://sca.coffee/research/protocols-best-practices" rel="noopener noreferrer">Specialty Coffee Association — Research and Best Practices</a></li>
+          <li><a href="https://www.hario.com/manuals" rel="noopener noreferrer">HARIO — Brewing Manuals and Product Guides</a></li>
+          <li><a href="https://worldcoffeeresearch.org/resources" rel="noopener noreferrer">World Coffee Research — Coffee Resources</a></li>
+        </ol>
+        <p><small>เรียบเรียงโดย Brew Atlas TH · สูตรนี้เป็นแนวทางตั้งต้น ควรปรับตามระดับการคั่ว อายุเมล็ด อุปกรณ์ คุณภาพน้ำ และรสนิยมของผู้ดื่ม</small></p>
+      </section>
+    </article>
+  </main>
+
+  <style>
+    .recipe-summary{margin:0 0 26px;color:var(--espresso);font-size:.96rem}
+    .prose h3{font:700 1.35rem/1.3 var(--serif);margin:1.8em 0 .45em}
+    .coffee-picks{background:linear-gradient(135deg,#24170f,#4a2f1d);color:var(--cream);padding:28px;margin:34px 0;border-radius:4px}
+    .coffee-picks .eyebrow{color:var(--latte)}
+    .coffee-picks h3{margin:.35em 0 .7em;font-size:1.6rem}
+    .coffee-picks a{color:#f1d3a0;text-decoration:underline;text-underline-offset:3px}
+    .coffee-picks li{margin:.65em 0}
+    .coffee-picks small{display:block;color:#cdbda9;margin-top:18px;line-height:1.6}
+    .table-scroll{overflow-x:auto;margin:24px 0;border:1px solid var(--line)}
+    .table-scroll table{margin:0;min-width:640px;border:0}
+    .table-scroll th:first-child,.table-scroll td:first-child{border-left:0}
+    .table-scroll th:last-child,.table-scroll td:last-child{border-right:0}
+    .references{border-top:1px solid var(--line);margin-top:56px;padding-top:12px}
+    .references h2{font-size:1.8rem}
+    .references a{color:var(--coffee);text-decoration:underline;text-underline-offset:3px}
+    @media(max-width:600px){.prose h1{font-size:2.35rem}.article-hero{margin-top:22px}.coffee-picks{padding:22px}.table-scroll{margin-inline:-4vw;padding:0;border-left:0;border-right:0}.table-scroll table{font-size:.78rem;min-width:620px}.table-scroll th,.table-scroll td{padding:10px}.actions{align-items:stretch}.actions .btn{width:100%}}
+  </style>
+</BaseLayout>
